@@ -1,4 +1,4 @@
-package models;
+package com.auth0.example.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,8 +9,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Weather {
-
+public class CurrentWeather {
+    private String base;
     private String temp;
     private String pressure;
 }

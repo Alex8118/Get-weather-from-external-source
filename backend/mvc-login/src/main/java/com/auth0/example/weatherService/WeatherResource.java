@@ -1,7 +1,7 @@
-package weatherService;
+package com.auth0.example.weatherService;
 
-import models.CurrentWeather;
-import models.Weather;
+import com.auth0.example.models.CurrentWeather;
+import com.auth0.example.models.Weather;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -21,11 +21,11 @@ public class WeatherResource {
     @Autowired
     private RestTemplate restTemplate;
 
-    @GetMapping("/moscow")
+    @GetMapping("/{city}")
     public Weather getWeatherInfo(@PathVariable("city") String city) {
-        ResponseEntity<CurrentWeather> currentWeather = restTemplate.getForEntity(
-                "api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey, CurrentWeather.class);
-        return new Weather(currentWeather.getBody().getTemp(), currentWeather.getBody().getPressure());
+        ResponseEntity<Weather> weather = restTemplate.getForEntity(
+                "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey, Weather.class);
+        return weather.getBody();
     }
 
 }
