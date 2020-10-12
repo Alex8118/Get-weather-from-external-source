@@ -3,6 +3,6 @@ server:
 
 openweathermap:
   api:
-    key: 462e3718a1cc414ce57e3b3fb213be45
+    key: 462
 
 
