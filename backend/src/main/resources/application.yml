@@ -1,0 +1,8 @@
+server:
+  port: 3000
+
+openweathermap:
+  api:
+    key: 462e3718a1cc414ce57e3b3fb213be45
+
+
